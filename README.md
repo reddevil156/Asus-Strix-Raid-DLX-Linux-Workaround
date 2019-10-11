@@ -37,6 +37,8 @@ Bytes 3, 8 and 9 represent the state of the volume control (how many leds are on
 
 - state of status led remains on headphones, volume led change from zero two 13
 
+```bash
+
 09 c5 09 00 04 03 02 00 00 00 00 00 00 00 00 00		- headphone led on, zero volume leds
 09 c5 0a 00 04 03 02 01 00 00 00 00 00 00 00 00
 09 c5 0c 00 04 03 02 03 00 00 00 00 00 00 00 00
@@ -51,8 +53,10 @@ Bytes 3, 8 and 9 represent the state of the volume control (how many leds are on
 09 c5 0f 00 04 03 02 ff 07 00 00 00 00 00 00 00
 09 c5 17 00 04 03 02 ff 0f 00 00 00 00 00 00 00
 09 c5 27 00 04 03 02 ff 1f 00 00 00 00 00 00 00		- headphone led on, all 13 volume leds on
-
+```
 - state of status led remains on speaker, volume led change from zero two 13
+
+```bash
 09 c5 0f 00 04 03 08 00 00 00 00 00 00 00 00 00		- speaker led on, zero volume leds
 09 c5 10 00 04 03 08 01 00 00 00 00 00 00 00 00
 09 c5 12 00 04 03 08 03 00 00 00 00 00 00 00 00
@@ -67,7 +71,7 @@ Bytes 3, 8 and 9 represent the state of the volume control (how many leds are on
 09 c5 15 00 04 03 08 ff 07 00 00 00 00 00 00 00
 09 c5 1d 00 04 03 08 ff 0f 00 00 00 00 00 00 00
 09 c5 2d 00 04 03 08 ff 1f 00 00 00 00 00 00 00		- speaker led on, all 13 volume leds on
-
+```
 ## 3. USB Reuqest to change sound output
 
 To change the sound output the following USB request is used:
@@ -91,13 +95,21 @@ If the button is pressed or the volume is changed the box sends some data and wa
 until an answer with a new state is received (see part #2).
 
 Pressing middle button for switching relais:
+```bash
 5 5 0 3 1 1 3 0 1 1 1 1 1 0 0 0
+```
 Rotating button increasing volume:
+```bash
 5 5 0 1 1 3 3 0 1 1 1 1 1 0 0 0
+```
 Rotating button decreasing volume:
+```bash
 5 6 0 1 1 4 3 0 1 1 1 1 1 0 0 0
+```
 button press on raid mode button:
+```bash
 5 2 0 1 1 0 4 0 1 1 1 1 1 0 0 0
+```
 
 ## 5. Prerequisites
 
