@@ -21,15 +21,18 @@ Also there are 2 leds which show if headphone or speaker are active. That result
 
 To control the LEDs on the box the following USB request is used:
 
+```bash
 bmRequestType :0x21
 bRequest: 0x09
 wValue: 0x0200
 wIndex: 0x0004
 wLength: 16
+```
 
 The data block consists of 16 bytes and looks like this:
-
+```bash
 09 c5 27 00 04 03 02 ff 1f 00 00 00 00 00 00 00
+```
 
 Byte 7 changes the state for the status LED (headphone or speaker). 02 represents headphones, 08 represents speaker
 
@@ -75,19 +78,23 @@ Bytes 3, 8 and 9 represent the state of the volume control (how many leds are on
 ## 3. USB Reuqest to change sound output
 
 To change the sound output the following USB request is used:
-
+```bash
 bmRequestType :0x21
 bRequest: 0x01
 wValue: 0x0800
 wIndex: 0x0700
 wLength: 2
-
+```
 The data block consists of 2 bytes and looks like this:
 
 switching relais from headphone to speaker:
+```bash
 01 03
+```
 switching relais from speaker to headphone
+```bash
 02 03
+```
 
 ## 4. Generated USB interrupts from control box
 
